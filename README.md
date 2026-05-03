@@ -83,3 +83,15 @@ If the keyboard appears with an old Bluetooth name, cannot be discovered after d
 5. Remove/forget the old keyboard entry on the host and pair again.
 
 For the current one-half test, flash `settings_reset` to the left controller, then flash `sofle_supermini_left` again. After reset, the Bluetooth name should become `Sofle SuperMini`.
+
+## Pro Micro Pin Tester
+
+If Bluetooth works but no key on the PCB produces input, flash the `tester_pro_micro` firmware to the controller while it is installed on the PCB. This ZMK test firmware helps verify whether the Pro Micro footprint pins are electrically connected as expected.
+
+Use it before changing the matrix map:
+
+1. Flash `tester_pro_micro` to the left controller.
+2. Pair/connect it if needed.
+3. Press keys across the left half and record which Pro Micro pins trigger.
+4. Compare the result with the expected row pins `D5-D9` and column pins `D10, D16, D14, D15, D18, D19`.
+5. Flash `sofle_supermini_left` again after testing.
