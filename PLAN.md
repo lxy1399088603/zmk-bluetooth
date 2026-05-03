@@ -1,4 +1,4 @@
-﻿# Sofle QMK 迁移到 ZMK 蓝牙固件计划
+# Sofle QMK 迁移到 ZMK 蓝牙固件计划
 
 ## 1. 可行性结论
 

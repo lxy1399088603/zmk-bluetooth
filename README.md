@@ -1,4 +1,4 @@
-﻿# Sofle SuperMini NRF52840 ZMK Config
+# Sofle SuperMini NRF52840 ZMK Config
 
 This is a first-pass ZMK migration for the existing QMK Sofle firmware in `D:\cwork\keyboard\sofle`.
 
