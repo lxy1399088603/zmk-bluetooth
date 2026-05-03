@@ -95,3 +95,32 @@ Use it before changing the matrix map:
 3. Press keys across the left half and record which Pro Micro pins trigger.
 4. Compare the result with the expected row pins `D5-D9` and column pins `D10, D16, D14, D15, D18, D19`.
 5. Flash `sofle_supermini_left` again after testing.
+## Left-Half Mode Layer
+
+The left thumb mode key uses a tap-dance behavior:
+
+- Single tap: no action.
+- Double tap: toggles the Lower mode layer.
+- On the Lower layer, pressing the same physical mode key toggles Lower off.
+
+Current left-half Base layout:
+
+```text
+ESC   1     2     3     4     5
+TAB   Q     W     E     R     T
+LSFT  A     S     D     F     G
+LCTL  Z     X     C     V     B
+      `     LGUI  LALT  MODE  SPACE
+```
+
+Current left-half Lower mode controls:
+
+```text
+F1      F2      F3    F4       F5      F6
+BT0     BT1     UP    BT2      BT3     BT4
+BLE     LEFT    DOWN  RIGHT    USB     OUT_TOG
+BT_CLR  BT_PRV  BT_NXT
+              MODE_OFF
+```
+
+Bluetooth profile controls use ZMK profiles 0-4. `BLE`, `USB`, and `OUT_TOG` switch the output target.
