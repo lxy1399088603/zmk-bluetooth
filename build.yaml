@@ -1,0 +1,6 @@
+﻿---
+include:
+  - board: nice_nano//zmk
+    shield: sofle_supermini_left
+  - board: nice_nano//zmk
+    shield: sofle_supermini_right

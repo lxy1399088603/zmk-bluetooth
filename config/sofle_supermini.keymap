@@ -1,0 +1,117 @@
+﻿#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define BASE 0
+#define GAME 1
+#define LOWER 2
+#define RAISE 3
+
+/ {
+    macros {
+        alt_tab_fwd: alt_tab_fwd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp TAB>, <&macro_release &kp LALT>;
+        };
+
+        alt_tab_rev: alt_tab_rev {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = <&macro_press &kp LALT &kp LSHFT>, <&macro_tap &kp TAB>, <&macro_release &kp LSHFT &kp LALT>;
+        };
+
+        move_win_right: move_win_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = <&macro_press &kp LSHFT &kp LGUI>, <&macro_tap &kp RIGHT>, <&macro_release &kp LGUI &kp LSHFT>;
+        };
+
+        move_win_left: move_win_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = <&macro_press &kp LSHFT &kp LGUI>, <&macro_tap &kp LEFT>, <&macro_release &kp LGUI &kp LSHFT>;
+        };
+
+        word_backspace: word_backspace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp BSPC>, <&macro_release &kp LCTRL>;
+        };
+    };
+
+    behaviors {
+        rot_kp: sensor_rotate_key_press {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        base_layer {
+            display-name = "Base";
+            bindings = <
+                &kp N3               &kp N8               &kp N2               &kp N4               &kp N7               &kp N9               &kp N5               &kp N6               &kp GRAVE            &kp N1
+                &kp N0               &kp MINUS            &kp E                &kp I                &kp W                &kp R                &kp U                &kp O                &kp T                &kp Y
+                &kp ESC              &kp Q                &kp P                &word_backspace      &kp D                &kp C_MUTE           &kp LC(W)            &kp K                &kp S                &kp F
+                &kp J                &kp L                &kp G                &kp H                &kp TAB              &kp A                &kp SEMI             &kp APOS             &kp C                &kp COMMA
+                &kp X                &kp V                &kp M                &kp DOT              &kp B                &kp N                &kp LSHFT            &kp Z                &kp FSLH             &kp RSHFT
+                &kp LALT             &kp RALT             &kp LGUI             &kp LCTRL            &kp RCTRL            &tog GAME            &mo LOWER            &kp ENTER            &kp SPACE            &mo RAISE
+            >;
+            sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>, <&rot_kp PG_UP PG_DN>;
+        };
+
+        game_layer {
+            display-name = "Game";
+            bindings = <
+                &kp N2               &trans               &kp N1               &kp N3               &trans               &trans               &kp N4               &trans               &kp PSCRN            &kp N5
+                &kp F11              &kp F4               &kp W                &trans               &kp Q                &kp E                &trans               &trans               &kp R                &trans
+                &kp F12              &kp ESC              &trans               &kp F12              &kp S                &trans               &trans               &trans               &kp A                &kp D
+                &trans               &trans               &kp F                &trans               &kp ENTER            &kp TAB              &trans               &trans               &kp X                &trans
+                &kp Z                &kp C                &trans               &trans               &kp V                &trans               &kp LSHFT            &kp LSHFT            &trans               &kp RALT
+                &kp B                &trans               &kp ENTER            &trans               &trans               &trans               &kp PAUSE_BREAK      &kp SPACE            &trans               &trans
+            >;
+            sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>, <&rot_kp PG_UP PG_DN>;
+        };
+
+        lower_layer {
+            display-name = "Lower";
+            bindings = <
+                &kp F3               &kp F8               &kp F2               &kp F4               &kp F7               &kp F9               &kp F5               &kp F6               &kp GRAVE            &kp F1
+                &kp F10              &kp F11              &kp N3               &kp N8               &kp N2               &kp N4               &kp N7               &kp N9               &kp N5               &kp N6
+                &kp ESC              &kp N1               &kp N0               &kp F12              &kp HASH             &trans               &kp LC(T)            &kp ASTRK            &kp AT               &kp DLLR
+                &kp AMPS             &kp LPAR             &kp PRCNT            &kp CARET            &trans               &kp EXCL             &kp RPAR             &kp PIPE             &kp PLUS             &kp DOT
+                &kp MINUS            &kp LBRC             &kp RBKT             &kp COLON            &kp RBRC             &kp LBKT             &trans               &kp EQUAL            &kp BSLH             &trans
+                &trans               &trans               &trans               &trans               &trans               &trans               &trans               &trans               &trans               &kp BSPC
+            >;
+            sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>, <&rot_kp PG_UP PG_DN>;
+        };
+
+        raise_layer {
+            display-name = "Raise";
+            bindings = <
+                &trans               &trans               &kp LC(KP_PLUS)      &trans               &kp F14              &trans               &trans               &kp F13              &move_win_left       &kp LC(KP_PLUS)
+                &trans               &move_win_right      &kp K_APP            &kp UP               &kp PSCRN            &kp LC(UP)           &kp HOME             &kp END              &kp LC(DOWN)         &kp C_AC_FORWARD
+                &trans               &kp INS              &kp INS              &kp DEL              &kp LSHFT            &trans               &bt BT_SEL 0         &kp DOWN             &kp LCTRL            &kp LC(LEFT)
+                &kp LEFT             &kp RIGHT            &kp LC(RIGHT)        &kp C_AC_BACK        &bt BT_SEL 1         &kp LALT             &kp KP_NLCK          &kp BSPC             &kp LC(C)            &bt BT_SEL 2
+                &kp LC(X)            &kp LC(V)            &kp PG_UP            &kp PG_DN            &bt BT_SEL 3         &kp CAPS             &bt BT_SEL 4         &kp LC(Z)            &kp SLCK             &bt BT_CLR
+                &bt BT_NXT           &bt BT_PRV           &out OUT_BLE         &out OUT_USB         &kp C_AC_REFRESH     &out OUT_TOG         &kp C_AL_MY_COMPUTER &kp C_AL_CALC        &trans               &trans
+            >;
+            sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>, <&rot_kp PG_UP PG_DN>;
+        };
+    };
+};

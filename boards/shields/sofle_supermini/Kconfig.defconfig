@@ -1,0 +1,16 @@
+﻿if SHIELD_SOFLE_SUPERMINI_LEFT || SHIELD_SOFLE_SUPERMINI_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "Sofle SuperMini"
+
+config ZMK_SPLIT
+    default y
+
+endif
+
+if SHIELD_SOFLE_SUPERMINI_LEFT
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif

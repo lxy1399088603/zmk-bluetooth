@@ -1,0 +1,20 @@
+﻿#include "sofle_supermini.dtsi"
+
+&default_transform {
+    col-offset = <6>;
+};
+
+&kscan0 {
+    /* QMK right MATRIX_COL_PINS_RIGHT: F6, F7, B1, B3, B2, B6 -> Pro Micro D19, D18, D15, D14, D16, D10. */
+    col-gpios =
+        <&pro_micro 19 GPIO_ACTIVE_HIGH>,
+        <&pro_micro 18 GPIO_ACTIVE_HIGH>,
+        <&pro_micro 15 GPIO_ACTIVE_HIGH>,
+        <&pro_micro 14 GPIO_ACTIVE_HIGH>,
+        <&pro_micro 16 GPIO_ACTIVE_HIGH>,
+        <&pro_micro 10 GPIO_ACTIVE_HIGH>;
+};
+
+&right_encoder {
+    status = "okay";
+};
