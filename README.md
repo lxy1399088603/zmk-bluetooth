@@ -70,3 +70,4 @@ The matrix pin order is taken from the current QMK `config.h`:
 - Encoders: `F5/F4` -> Pro Micro `D20/D21`
 
 The SuperMini NRF52840 pinout maps those Pro Micro labels to nRF52840 GPIOs internally through the nice!nano-compatible board definition.
+

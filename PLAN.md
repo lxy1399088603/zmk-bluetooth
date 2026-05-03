@@ -149,15 +149,15 @@ D:\cwork\keyboard\zmk-solfe\
     west.yml
     sofle_supermini.conf
     sofle_supermini.keymap
-  boards\
-    shields\
-      sofle_supermini\
-        Kconfig.defconfig
-        Kconfig.shield
-        sofle_supermini.conf
-        sofle_supermini.dtsi
-        sofle_supermini_left.overlay
-        sofle_supermini_right.overlay
+    boards\
+      shields\
+        sofle_supermini\
+          Kconfig.defconfig
+          Kconfig.shield
+          sofle_supermini.conf
+          sofle_supermini.dtsi
+          sofle_supermini_left.overlay
+          sofle_supermini_right.overlay
 ```
 
 命名建议：
@@ -382,5 +382,6 @@ ZMK 不需要用 fake matrix column 模拟旋钮。
 - 旋钮可以在矩阵验证完成后第二步加入。
 
 第一目标不是一次性复刻所有炫酷功能，而是先得到一把稳定、键位熟悉、能蓝牙连接和切换设备的 Sofle。
+
 
 
