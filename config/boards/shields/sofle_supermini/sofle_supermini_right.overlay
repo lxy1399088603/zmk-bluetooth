@@ -5,14 +5,14 @@
 };
 
 &kscan0 {
-    /* QMK right MATRIX_COL_PINS_RIGHT: F6, F7, B1, B3, B2, B6 -> Pro Micro D19, D18, D15, D14, D16, D10. */
+    /* SuperMini NRF52840 GPIOs for QMK right cols: F6, F7, B1, B3, B2, B6 -> D19, D18, D15, D14, D16, D10. */
     col-gpios =
-        <&pro_micro 19 GPIO_ACTIVE_HIGH>,
-        <&pro_micro 18 GPIO_ACTIVE_HIGH>,
-        <&pro_micro 15 GPIO_ACTIVE_HIGH>,
-        <&pro_micro 14 GPIO_ACTIVE_HIGH>,
-        <&pro_micro 16 GPIO_ACTIVE_HIGH>,
-        <&pro_micro 10 GPIO_ACTIVE_HIGH>;
+        <&gpio0 2 GPIO_ACTIVE_HIGH>,
+        <&gpio1 15 GPIO_ACTIVE_HIGH>,
+        <&gpio1 13 GPIO_ACTIVE_HIGH>,
+        <&gpio1 11 GPIO_ACTIVE_HIGH>,
+        <&gpio0 10 GPIO_ACTIVE_HIGH>,
+        <&gpio0 9 GPIO_ACTIVE_HIGH>;
 };
 
 &right_encoder {
