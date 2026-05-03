@@ -28,11 +28,11 @@
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "row2col";
         row-gpios =
-            <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&gpio1 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&gpio1 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-            <&gpio1 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+            <&gpio0 24 GPIO_ACTIVE_HIGH>,
+            <&gpio1 0 GPIO_ACTIVE_HIGH>,
+            <&gpio0 11 GPIO_ACTIVE_HIGH>,
+            <&gpio1 4 GPIO_ACTIVE_HIGH>,
+            <&gpio1 6 GPIO_ACTIVE_HIGH>;
     };
 
     left_encoder: encoder_left {
