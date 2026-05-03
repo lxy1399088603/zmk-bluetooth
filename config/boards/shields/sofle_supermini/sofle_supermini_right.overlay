@@ -5,14 +5,14 @@
 };
 
 &kscan0 {
-    /* PCB right cols from QMK: F6,F7,B1,B3,B2,B6 -> Pro Micro A1,A0,D15,D14,D16,D10 -> SuperMini D19,D18,D15,D14,D16,D10. */
+    /* Reversed column scan order for the right PCB half. QMK cols F6,F7,B1,B3,B2,B6 are scanned as D10,D16,D14,D15,D18,D19 here. */
     col-gpios =
-        <&gpio0 2 GPIO_ACTIVE_HIGH>,
-        <&gpio1 15 GPIO_ACTIVE_HIGH>,
-        <&gpio1 13 GPIO_ACTIVE_HIGH>,
-        <&gpio1 11 GPIO_ACTIVE_HIGH>,
+        <&gpio0 9 GPIO_ACTIVE_HIGH>,
         <&gpio0 10 GPIO_ACTIVE_HIGH>,
-        <&gpio0 9 GPIO_ACTIVE_HIGH>;
+        <&gpio1 11 GPIO_ACTIVE_HIGH>,
+        <&gpio1 13 GPIO_ACTIVE_HIGH>,
+        <&gpio1 15 GPIO_ACTIVE_HIGH>,
+        <&gpio0 2 GPIO_ACTIVE_HIGH>;
 };
 
 &right_encoder {
