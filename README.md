@@ -71,3 +71,15 @@ The matrix pin order is taken from the current QMK `config.h`:
 
 The SuperMini NRF52840 pinout maps those Pro Micro labels to nRF52840 GPIOs internally through the nice!nano-compatible board definition.
 
+
+## Settings Reset
+
+If the keyboard appears with an old Bluetooth name, cannot be discovered after deleting the host-side pairing, or connects but sends no keys, clear ZMK persistent settings:
+
+1. Download the latest GitHub Actions firmware zip.
+2. Flash the `settings_reset` firmware to the controller.
+3. Wait for the controller to reboot. It will not advertise over Bluetooth while running reset firmware.
+4. Flash the normal `sofle_supermini_left` or `sofle_supermini_right` firmware again.
+5. Remove/forget the old keyboard entry on the host and pair again.
+
+For the current one-half test, flash `settings_reset` to the left controller, then flash `sofle_supermini_left` again. After reset, the Bluetooth name should become `Sofle SuperMini`.
