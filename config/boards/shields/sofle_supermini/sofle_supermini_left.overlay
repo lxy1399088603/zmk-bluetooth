@@ -1,14 +1,14 @@
 #include "sofle_supermini.dtsi"
 
 &kscan0 {
-    /* SuperMini NRF52840 GPIOs for QMK left cols: B6, B2, B3, B1, F7, F6 -> D10, D16, D14, D15, D18, D19. */
+    /* Reversed Pro Micro footprint: PCB B6,B2,B3,B1,F7,F6 land on SuperMini D9,D8,D7,D6,D5,D4. */
     col-gpios =
-        <&gpio0 9 GPIO_ACTIVE_HIGH>,
-        <&gpio0 10 GPIO_ACTIVE_HIGH>,
-        <&gpio1 11 GPIO_ACTIVE_HIGH>,
-        <&gpio1 13 GPIO_ACTIVE_HIGH>,
-        <&gpio1 15 GPIO_ACTIVE_HIGH>,
-        <&gpio0 2 GPIO_ACTIVE_HIGH>;
+        <&gpio1 6 GPIO_ACTIVE_HIGH>,
+        <&gpio1 4 GPIO_ACTIVE_HIGH>,
+        <&gpio0 11 GPIO_ACTIVE_HIGH>,
+        <&gpio1 0 GPIO_ACTIVE_HIGH>,
+        <&gpio0 24 GPIO_ACTIVE_HIGH>,
+        <&gpio0 22 GPIO_ACTIVE_HIGH>;
 };
 
 &left_encoder {

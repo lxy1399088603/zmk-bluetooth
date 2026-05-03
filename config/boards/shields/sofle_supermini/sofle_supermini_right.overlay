@@ -5,14 +5,14 @@
 };
 
 &kscan0 {
-    /* SuperMini NRF52840 GPIOs for QMK right cols: F6, F7, B1, B3, B2, B6 -> D19, D18, D15, D14, D16, D10. */
+    /* Reversed Pro Micro footprint: PCB F6,F7,B1,B3,B2,B6 land on SuperMini D4,D5,D6,D7,D8,D9. */
     col-gpios =
-        <&gpio0 2 GPIO_ACTIVE_HIGH>,
-        <&gpio1 15 GPIO_ACTIVE_HIGH>,
-        <&gpio1 13 GPIO_ACTIVE_HIGH>,
-        <&gpio1 11 GPIO_ACTIVE_HIGH>,
-        <&gpio0 10 GPIO_ACTIVE_HIGH>,
-        <&gpio0 9 GPIO_ACTIVE_HIGH>;
+        <&gpio0 22 GPIO_ACTIVE_HIGH>,
+        <&gpio0 24 GPIO_ACTIVE_HIGH>,
+        <&gpio1 0 GPIO_ACTIVE_HIGH>,
+        <&gpio0 11 GPIO_ACTIVE_HIGH>,
+        <&gpio1 4 GPIO_ACTIVE_HIGH>,
+        <&gpio1 6 GPIO_ACTIVE_HIGH>;
 };
 
 &right_encoder {
