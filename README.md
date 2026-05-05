@@ -65,7 +65,7 @@ Flash the left firmware to the left SuperMini and the right firmware to the righ
 The matrix pin order is taken from the current QMK `config.h`:
 
 - Left rows: `C6, D7, E6, B4, B5` -> Pro Micro `D5, D6, D7, D8, D9`
-- Left columns: `B6, B2, B3, B1, F7, F6` -> Pro Micro `D10, D16, D14, D15, D18, D19`
+- Left columns from QMK are `B6, B2, B3, B1, F7, F6`, but this PCB/controller orientation scans them as Pro Micro `D19, D18, D15, D14, D16, D10` in ZMK so physical keys stay left-to-right
 - Right columns: `F6, F7, B1, B3, B2, B6` -> Pro Micro `D19, D18, D15, D14, D16, D10`
 - Encoders: `F5/F4` -> Pro Micro `D20/D21`
 
@@ -127,4 +127,4 @@ Bluetooth profile controls use ZMK profiles 0-4. `BLE`, `USB`, and `OUT_TOG` swi
 
 ## OLED
 
-OLED support is enabled for the standard Sofle 128x32 SSD1306 module at I2C address `0x3c` on the Pro Micro I2C pins (`D1/SDA` and `D0/SCL`). The first ZMK version uses the built-in status screen, which can show layer, output target, and battery status. The old QMK pet animation is not ported yet.
+OLED support is enabled for the standard Sofle 128x32 SSD1306 module at I2C address `0x3c` on the Pro Micro I2C pins (`D1/SDA` and `D0/SCL`). The display node uses the common SSD1306 inverted COM/remap setup used by Sofle-style OLED modules. The first ZMK version uses the built-in status screen, which can show layer, output target, and battery status. The old QMK pet animation is not ported yet.
