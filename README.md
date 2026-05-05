@@ -110,7 +110,7 @@ ESC   1     2     3     4     5
 TAB   Q     W     E     R     T
 LSFT  A     S     D     F     G
 LCTL  Z     X     C     V     B
-      `     LGUI  LALT  MODE  SPACE
+      `     LGUI  LALT  MODE  SPACE  ENC_PRESS
 ```
 
 Current left-half Lower mode controls:
