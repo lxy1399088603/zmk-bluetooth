@@ -14,3 +14,17 @@ config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
+
+if SHIELD_SOFLE_SUPERMINI_LEFT || SHIELD_SOFLE_SUPERMINI_RIGHT
+
+if ZMK_DISPLAY
+
+config I2C
+    default y
+
+config SSD1306
+    default y
+
+endif # ZMK_DISPLAY
+
+endif

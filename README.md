@@ -16,13 +16,13 @@ Included now:
 - Bluetooth profile selection/next/previous/clear on the raise layer.
 - USB/BLE output selection on the raise layer.
 - Encoders modeled as ZMK sensors.
-- RGB and OLED disabled for the first validation build.
+- OLED enabled using the Sofle 128x32 SSD1306 display on the Pro Micro I2C pins.
 
 Not yet restored exactly:
 
 - QMK's delayed Alt-Tab hold behavior. The first version uses tap macros.
 - QMK's left/right Shift + Backspace direction-specific word deletion. The first version maps the custom key to Ctrl+Backspace.
-- RGB underglow and OLED pet display.
+- RGB underglow and the old QMK OLED pet display. The current OLED uses ZMK's built-in status screen.
 - VIA/ZMK Studio dynamic remapping.
 
 ## Build
@@ -82,7 +82,7 @@ If the keyboard appears with an old Bluetooth name, cannot be discovered after d
 4. Flash the normal `sofle_supermini_left` or `sofle_supermini_right` firmware again.
 5. Remove/forget the old keyboard entry on the host and pair again.
 
-For the current one-half test, flash `settings_reset` to the left controller, then flash `sofle_supermini_left` again. After reset, the Bluetooth name should become `Sofle SuperMini`.
+For the current one-half test, flash `settings_reset` to the left controller, then flash `sofle_supermini_left` again. After reset, the Bluetooth name should become `lxy-kb`.
 
 ## Pro Micro Pin Tester
 
@@ -124,3 +124,7 @@ BT_CLR  BT_PRV  BT_NXT
 ```
 
 Bluetooth profile controls use ZMK profiles 0-4. `BLE`, `USB`, and `OUT_TOG` switch the output target.
+
+## OLED
+
+OLED support is enabled for the standard Sofle 128x32 SSD1306 module at I2C address `0x3c` on the Pro Micro I2C pins (`D1/SDA` and `D0/SCL`). The first ZMK version uses the built-in status screen, which can show layer, output target, and battery status. The old QMK pet animation is not ported yet.
