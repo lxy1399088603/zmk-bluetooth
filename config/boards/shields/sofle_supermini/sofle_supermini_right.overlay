@@ -5,14 +5,14 @@
 };
 
 &kscan0 {
-    /* Reversed column scan order for the right PCB half. QMK cols F6,F7,B1,B3,B2,B6 are scanned as D10,D16,D14,D15,D18,D19 here. */
+    /* Mirror the right-half matrix so physical keys scan left-to-right. */
     col-gpios =
-        <&gpio0 9 GPIO_ACTIVE_HIGH>,
-        <&gpio0 10 GPIO_ACTIVE_HIGH>,
-        <&gpio1 11 GPIO_ACTIVE_HIGH>,
-        <&gpio1 13 GPIO_ACTIVE_HIGH>,
+        <&gpio0 2 GPIO_ACTIVE_HIGH>,
         <&gpio1 15 GPIO_ACTIVE_HIGH>,
-        <&gpio0 2 GPIO_ACTIVE_HIGH>;
+        <&gpio1 13 GPIO_ACTIVE_HIGH>,
+        <&gpio1 11 GPIO_ACTIVE_HIGH>,
+        <&gpio0 10 GPIO_ACTIVE_HIGH>,
+        <&gpio0 9 GPIO_ACTIVE_HIGH>;
 };
 
 &right_encoder {
