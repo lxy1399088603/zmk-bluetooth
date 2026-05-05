@@ -68,7 +68,7 @@
             bindings = <
                 &kp N3                &kp N8                &kp N2                &kp N4                &kp N7                &kp N9                &kp N5                &kp N6                &kp ESC               &kp N1                
                 &kp N0                &kp MINUS             &kp E                 &kp I                 &kp W                 &kp R                 &kp U                 &kp O                 &kp T                 &kp Y                 
-                &kp TAB               &kp Q                 &kp P                 &word_backspace       &kp D                 &kp C_MUTE            &kp LC(W)             &kp K                 &kp S                 &kp F                 
+                &kp TAB               &kp Q                 &kp P                 &word_backspace       &kp D                 &none                 &kp LC(W)             &kp K                 &kp S                 &kp F
                 &kp J                 &kp L                 &kp G                 &kp H                 &kp LSHFT             &kp A                 &kp SEMI              &kp APOS              &kp C                 &kp COMMA             
                 &kp X                 &kp V                 &kp M                 &kp DOT               &kp B                 &kp N                 &kp LCTRL             &kp Z                 &kp FSLH              &kp RSHFT             
                 &kp LGUI              &kp RALT              &kp GRAVE             &kp LALT              &kp RCTRL             &tog GAME             &mode_td              &kp SPACE             &kp SPACE             &mo RAISE             
@@ -94,9 +94,9 @@
             bindings = <
                 &kp F4                &kp F8                &kp F3                &kp F5                &kp F7                &kp F9                &kp F6                &kp F6                &kp F1                &kp F2                
                 &kp F10               &kp F11               &bt BT_SEL 2          &kp N8                &kp UP                &bt BT_SEL 3          &kp N7                &kp N9                &bt BT_SEL 4          &kp N6                
-                &bt BT_SEL 0          &bt BT_SEL 1          &kp N0                &kp F12               &kp RIGHT             &trans                &kp LC(T)             &kp ASTRK             &kp DOWN              &out OUT_USB          
-                &kp AMPS              &kp LPAR              &out OUT_TOG          &kp CARET             &out OUT_BLE          &kp LEFT              &kp RPAR              &kp PIPE              &none                 &kp DOT               
-                &bt BT_NXT            &none                 &kp RBKT              &kp COLON             &none                 &kp LBKT              &bt BT_CLR            &bt BT_PRV            &kp BSLH              &trans                
+                &bt BT_SEL 0          &bt BT_SEL 1          &kp N0                &kp F12               &kp RIGHT             &trans                &kp LC(T)             &kp ASTRK             &kp DOWN              &none
+                &kp AMPS              &kp LPAR              &none                 &kp CARET             &out OUT_BLE          &kp LEFT              &kp RPAR              &kp PIPE              &none                 &kp DOT
+                &bt BT_NXT            &none                 &kp RBKT              &kp COLON             &none                 &kp LBKT              &none                 &bt BT_PRV            &kp BSLH              &trans
                 &trans                &trans                &trans                &trans                &trans                &trans                &tog LOWER            &trans                &trans                &kp BSPC              
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;

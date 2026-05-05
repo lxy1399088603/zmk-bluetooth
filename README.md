@@ -123,8 +123,8 @@ BT_CLR  BT_PRV  BT_NXT
               MODE_OFF
 ```
 
-Bluetooth profile controls use ZMK profiles 0-4. `BLE`, `USB`, and `OUT_TOG` switch the output target.
+Bluetooth profile controls use ZMK profiles 0-4. `BLE` restores Bluetooth output. `USB`/`OUT_TOG` and `BT_CLR` are intentionally disabled on the left mode layer for now so an accidental press cannot make the keyboard stop sending over Bluetooth.
 
 ## OLED
 
-OLED support is enabled for the standard Sofle 128x32 SSD1306 module at I2C address `0x3c` on the Pro Micro I2C pins (`D1/SDA` and `D0/SCL`). The display node uses the common SSD1306 inverted COM/remap setup used by Sofle-style OLED modules. The first ZMK version uses the built-in status screen, which can show layer, output target, and battery status. The old QMK pet animation is not ported yet.
+OLED support is enabled for the standard Sofle 128x32 SSD1306 module at I2C address `0x3c` on the Pro Micro I2C pins (`D1/SDA` and `D0/SCL`). The display node uses the common SSD1306 COM/remap setup used by Sofle-style OLED modules, with ZMK display inversion enabled in config. The first ZMK version uses the built-in status screen, which can show layer, output target, and battery status. The old QMK pet animation is not ported yet.
