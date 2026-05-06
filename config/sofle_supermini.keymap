@@ -52,11 +52,13 @@
     };
 
     behaviors {
-        mode_td: mode_switch_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&none>, <&tog LOWER>;
+        mode_hold: mode_switch_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <0>;
+            bindings = <&mo>, <&tog>;
         };
     };
 
@@ -71,9 +73,9 @@
                 &kp TAB               &kp Q                 &kp P                 &kp EQUAL             &kp D                 &kp C_MUTE            &kp C_MUTE            &kp K                 &kp S                 &kp F
                 &kp J                 &kp L                 &kp G                 &kp H                 &kp LSHFT             &kp A                 &kp SEMI              &kp APOS              &kp C                 &kp COMMA
                 &kp X                 &kp V                 &kp M                 &kp DOT               &kp B                 &kp N                 &kp LCTRL             &kp Z                 &kp FSLH              &kp RSHFT
-                &kp LGUI              &kp RBKT              &kp GRAVE             &kp LALT              &kp LBKT              &kp MINUS             &mode_td              &kp SPACE             &kp ENTER             &kp DEL
+                &kp LGUI              &kp RBKT              &kp GRAVE             &kp LALT              &kp LBKT              &kp MINUS             &mode_hold GAME LOWER &kp SPACE             &kp ENTER             &kp BSPC
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp UP DOWN>;
         };
 
         game_layer {
@@ -86,7 +88,7 @@
                 &kp Z                &kp C                &trans               &trans               &kp V                &trans               &kp LSHFT            &kp LSHFT            &trans               &kp RALT
                 &kp B                &trans               &kp ENTER            &trans               &trans               &trans               &kp PAUSE_BREAK      &kp SPACE            &trans               &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp UP DOWN>;
         };
 
         lower_layer {
@@ -99,7 +101,7 @@
                 &bt BT_NXT            &none                 &kp RBKT              &kp COLON             &none                 &kp LBKT              &none                 &bt BT_PRV            &kp BSLH              &trans
                 &trans                &trans                &trans                &trans                &trans                &trans                &tog LOWER            &trans                &trans                &kp BSPC
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp UP DOWN>;
         };
 
         raise_layer {
@@ -112,7 +114,7 @@
                 &kp LC(X)            &kp LC(V)            &kp PG_UP            &kp PG_DN            &bt BT_SEL 3         &kp CAPS             &bt BT_SEL 4         &kp LC(Z)            &kp SLCK             &bt BT_CLR
                 &bt BT_NXT           &bt BT_PRV           &out OUT_BLE         &out OUT_USB         &kp C_AC_REFRESH     &out OUT_TOG         &kp C_AL_MY_COMPUTER &kp C_AL_CALC        &trans               &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp UP DOWN>;
         };
     };
 };
