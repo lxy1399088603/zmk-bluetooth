@@ -82,9 +82,9 @@
             display-name = "Game";
             bindings = <
                 &kp N2               &trans               &kp N1               &kp N3               &trans               &trans               &kp N4               &trans               &kp PSCRN            &kp N5
-                &kp F11              &kp F4               &kp UP               &trans               &kp Q                &kp E                &trans               &bt BT_SEL 0         &kp R                &trans
-                &kp F12              &kp ESC              &bt BT_SEL 1         &kp DOWN             &kp DOWN             &trans               &trans               &trans               &kp LEFT             &kp RIGHT
-                &trans               &trans               &kp F                &trans               &kp ENTER            &kp TAB              &trans               &trans               &kp X                &trans
+                &kp F11              &kp F4               &kp E                &trans               &kp UP               &kp E                &trans               &bt BT_SEL 0         &kp R                &trans
+                &kp F12              &kp ESC              &bt BT_SEL 1         &kp RIGHT            &kp RIGHT            &trans               &trans               &trans               &kp DOWN             &kp F
+                &trans               &trans               &kp F                &trans               &kp ENTER            &kp LEFT             &trans               &trans               &kp X                &trans
                 &kp Z                &kp C                &trans               &trans               &kp V                &trans               &kp LSHFT            &kp LSHFT            &trans               &kp RALT
                 &kp B                &trans               &kp ENTER            &trans               &trans               &trans               &kp PAUSE_BREAK      &kp SPACE            &trans               &trans
             >;
