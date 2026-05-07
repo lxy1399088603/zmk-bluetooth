@@ -13,10 +13,9 @@ if SHIELD_SOFLE_SUPERMINI_LEFT
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-endif
-
-if SHIELD_SOFLE_SUPERMINI_LEFT || SHIELD_SOFLE_SUPERMINI_RIGHT
-
+# I2C and SSD1306 are only needed on the left half (the half with the OLED).
+# Enabling these on the right half causes the nRF52840 TWIM controller to
+# hang at boot when it probes 0x3c and receives no ACK.
 if ZMK_DISPLAY
 
 config I2C
@@ -27,4 +26,4 @@ config SSD1306
 
 endif # ZMK_DISPLAY
 
-endif
+endif # SHIELD_SOFLE_SUPERMINI_LEFT

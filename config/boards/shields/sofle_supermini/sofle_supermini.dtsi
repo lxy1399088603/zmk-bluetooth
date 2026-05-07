@@ -60,6 +60,9 @@
 
 &pro_micro_i2c {
     status = "okay";
+    /* 100 kHz is more reliable than the default 400 kHz for the SSD1306
+       modules commonly used on Sofle keyboards. Avoids TWIM NACK hangs. */
+    clock-frequency = <100000>;
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
