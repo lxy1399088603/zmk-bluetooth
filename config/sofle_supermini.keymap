@@ -73,7 +73,7 @@
                 &kp TAB               &kp Q                 &kp P                 &kp EQUAL             &kp D                 &kp C_MUTE            &kp C_MUTE            &kp K                 &kp S                 &kp F
                 &kp J                 &kp L                 &kp G                 &kp H                 &kp LSHFT             &kp A                 &kp SEMI              &kp APOS              &kp C                 &kp COMMA
                 &kp X                 &kp V                 &kp M                 &kp DOT               &kp B                 &kp N                 &kp LCTRL             &kp Z                 &kp FSLH              &kp RSHFT
-                &kp LGUI              &kp RBKT              &kp GRAVE             &kp LALT              &kp LBKT              &kp MINUS             &mode_hold GAME LOWER &kp SPACE             &kp ENTER             &kp BSPC
+                &kp LGUI              &kp RBKT              &kp GRAVE             &kp LALT              &kp LBKT              &kp BSLH              &mode_hold GAME LOWER &kp SPACE             &kp ENTER             &kp BSPC
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp UP DOWN>;
         };

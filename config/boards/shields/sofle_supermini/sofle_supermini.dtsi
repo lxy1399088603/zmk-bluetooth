@@ -70,6 +70,10 @@
         page-offset = <0>;
         display-offset = <0>;
         multiplex-ratio = <31>;
+        /* 128x32 panels require sequential COM pin config (bit D4=0).
+           Without this the controller defaults to alternative (64-row) mode,
+           driving only the top pixel row active — seen as a white line. */
+        com-sequential;
         segment-remap;
         com-invdir;
         prechargep = <0x22>;
