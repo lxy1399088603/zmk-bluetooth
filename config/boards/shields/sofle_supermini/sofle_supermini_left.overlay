@@ -1,5 +1,11 @@
 #include "sofle_supermini.dtsi"
 
+/ {
+    chosen {
+        zephyr,display = &oled;
+    };
+};
+
 &kscan0 {
     /* The left PCB footprint presents the physical columns mirrored to the SuperMini. Keep logical key order left-to-right. */
     col-gpios =
@@ -13,4 +19,29 @@
 
 &left_encoder {
     status = "okay";
+};
+
+/* OLED is only present on the left half. Keeping it here (not in the shared
+   .dtsi) prevents the right half's TWIM from probing 0x3c and hanging. */
+&pro_micro_i2c {
+    status = "okay";
+    /* 100 kHz is more reliable than 400 kHz for SSD1306 — avoids TWIM NACK hangs. */
+    clock-frequency = <100000>;
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        /* 128x32 panels need sequential COM pin config (bit D4=0).
+           Alternative (64-row) mode drives only the top row — seen as a white line. */
+        com-sequential;
+        segment-remap;
+        com-invdir;
+        prechargep = <0x22>;
+    };
 };
